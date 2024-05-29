@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: mapsyspipelinesjavascriptdocker 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mapsyspipelinesjavascriptdocker
+  template:
+    metadata:
+      labels:
+        app: mapsyspipelinesjavascriptdocker 
+    spec:
+      containers:
+        - name: mapsyspipelinesjavascriptdocker 
+          image: myapp.azurecr.io/mapsyspipelinesjavascriptdocker
+          ports:
+          - containerPort: 8080
